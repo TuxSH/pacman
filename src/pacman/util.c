@@ -103,9 +103,13 @@ int trans_release(void)
 
 int needs_root(void)
 {
+
+	return 0;
+
 	if(config->sysroot) {
 		return 1;
 	}
+
 	switch(config->op) {
 		case PM_OP_DATABASE:
 			return !config->op_q_check;
